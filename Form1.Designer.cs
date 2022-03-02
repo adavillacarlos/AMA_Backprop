@@ -67,6 +67,11 @@ namespace AMA_Backprop
             this.btnCheck = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
+            this.weightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadWeightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveWeightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,7 +225,8 @@ namespace AMA_Backprop
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.makeNeuralNetworksToolStripMenuItem,
-            this.trainToolStripMenuItem});
+            this.trainToolStripMenuItem,
+            this.weightsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(949, 28);
@@ -452,6 +458,38 @@ namespace AMA_Backprop
             this.txtResult.Size = new System.Drawing.Size(124, 22);
             this.txtResult.TabIndex = 35;
             // 
+            // weightsToolStripMenuItem
+            // 
+            this.weightsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadWeightsToolStripMenuItem,
+            this.saveWeightsToolStripMenuItem});
+            this.weightsToolStripMenuItem.Name = "weightsToolStripMenuItem";
+            this.weightsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.weightsToolStripMenuItem.Text = "Weights";
+            // 
+            // loadWeightsToolStripMenuItem
+            // 
+            this.loadWeightsToolStripMenuItem.Name = "loadWeightsToolStripMenuItem";
+            this.loadWeightsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadWeightsToolStripMenuItem.Text = "Load Weights";
+            this.loadWeightsToolStripMenuItem.Click += new System.EventHandler(this.loadWeightsToolStripMenuItem_Click);
+            // 
+            // saveWeightsToolStripMenuItem
+            // 
+            this.saveWeightsToolStripMenuItem.Name = "saveWeightsToolStripMenuItem";
+            this.saveWeightsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveWeightsToolStripMenuItem.Text = "Save Weights";
+            this.saveWeightsToolStripMenuItem.Click += new System.EventHandler(this.saveWeightsToolStripMenuItem_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -543,6 +581,11 @@ namespace AMA_Backprop
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.ToolStripMenuItem weightsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadWeightsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveWeightsToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

@@ -30,12 +30,31 @@ namespace AMA_Backprop
             //Male = 0; Female = 1 
             //Yes = 0; No = 1
 
-            txtResult.Text = cmbSmoke.SelectedIndex.ToString();  
         }
 
         private void trainToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadWeightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog(); 
+        }
+
+        private void saveWeightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            bp.saveWeights(saveFileDialog1.FileName); 
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            bp.loadWeights(openFileDialog1.FileName); 
         }
     }
 }
