@@ -52,7 +52,6 @@ namespace AMA_Backprop
             int iShortness = cmbShort.Text == "Yes" ? 1 : 0;
             int iSwallowing = cmbDifficult.Text == "Yes" ? 1 : 0;
             int iChest = cmbChestPains.Text == "Yes" ? 1 : 0;
-            Console.WriteLine(iChest); 
             //extract feature from the dataset (8-10) 
             //minimize features, lessen the hidden neurons 
          
@@ -79,10 +78,10 @@ namespace AMA_Backprop
              *  Male = 1; Female = 0 --> Male = 1; Female =  0 
              * 
              */
-            int lung_cancer = 0;
+            double lung_cancer = 0;
             List<LungCancerData> data = csvHelper.getRecords();
             // increase the epoch 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 foreach (var d in data)
                 {
@@ -95,9 +94,9 @@ namespace AMA_Backprop
                     bp.setInputs(6, (double)d.Shortness_Of_Breath == 2 ? 1 : 0);
                     bp.setInputs(7, (double)d.Swallowing_Difficulty == 2 ? 1 : 0);
                     bp.setInputs(8, (double)d.Chest_Pain == 2 ? 1 : 0);
-                    lung_cancer = d.Lung_Cancer == 2 ? 1 : 0;
+                    lung_cancer = d.Lung_Cancer == 1 ? 1 : 0;
                     Console.WriteLine(lung_cancer); 
-                    bp.setDesiredOutput(0, (double)lung_cancer);
+                    bp.setDesiredOutput(0,lung_cancer);
                     bp.learn();
 
 
